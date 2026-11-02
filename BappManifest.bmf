@@ -3,10 +3,11 @@ ExtensionType: 2
 Name: Office Open XML Editor
 RepoName: office-open-xml-editor
 ScreenVersion: 1.0
-SerialVersion: 0
+SerialVersion: 1
 MinPlatformVersion: 0
 ProOnly: False
 Author: Maxence Schmitt
 ShortDescription: Lets you edit Office Open XML files directly in Burp; useful for exploiting XXE
 EntryPoint: OfficeOpenXMLEditor.py
 BuildCommand: 
+SupportedProducts: Pro, Community
