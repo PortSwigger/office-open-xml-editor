@@ -1,6 +1,24 @@
-<p>This extension allows editing of Office Open XML (OOXML) files directly in Burp Suite.</p>
+<p>
+    Adds an editor tab for Office Open XML documents (docx, xlsx, pptx) uploaded in multipart requests, so you can edit
+    the XML inside the document directly in the request. It is aimed at testing for XML External Entity (XXE)
+    vulnerabilities in applications that parse Office files.
+</p>
 
-<p>It detects multi-part requests that contain files with a relevant extensions (docx, xlsx, pptx) and content.</p>
+<h2>Features</h2>
+<ul>
+    <li>Edit the XML inside an uploaded Office document in place, with no need to regenerate and re-upload a file for
+        each payload.</li>
+    <li>Iterate quickly on XXE payloads, including out-of-band tests with Burp Collaborator.</li>
+    <li>Automatically detects Office documents in multipart requests by Content-Type, with a fallback that searches the
+        request body for embedded ZIP data.</li>
+    <li>Configurable Content-Types and target file inside the document, so you can edit any part of the package.</li>
+    <li>Edits are repacked into the document and sent with the request, ready to forward from Repeater or Proxy.</li>
+</ul>
 
-<p>It is particularly useful to detecting and exploiting OOXML related XXE vulnerabilities.</p>
-
+<h2>Usage</h2>
+<ol>
+    <li>Send or intercept a multipart POST request that uploads a docx, xlsx or pptx file.</li>
+    <li>Open the Office Open XML Editor tab on the request.</li>
+    <li>Edit the XML, for example to insert an XXE payload.</li>
+    <li>Send the request.</li>
+</ol>
